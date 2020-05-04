@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useScroller } from "./useScroller";
+import { ANIMALS } from "@frontendmasters/pet";
 
 var array = [];
 for (var n = 0; n <= 100; n++) {
@@ -13,7 +14,7 @@ export var SearchParams = () => {
     "animalsClass",
     "animalsInput",
     "none",
-    array
+    ANIMALS
   );
   return (
     <div>
