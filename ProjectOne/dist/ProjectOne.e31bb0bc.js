@@ -28370,7 +28370,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var app = function app() {
-  var _useScroller = (0, _useScroller3.useScroller)('testClass', 'testInput', '-', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+  var _useScroller = (0, _useScroller3.useScroller)("testClass", "testInput", "-", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
       _useScroller2 = _slicedToArray(_useScroller, 1),
       Tester = _useScroller2[0];
 
