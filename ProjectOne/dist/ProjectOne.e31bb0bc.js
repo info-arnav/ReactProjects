@@ -28313,7 +28313,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var useScroller = function useScroller(inputId, classId, defaultValue, array) {
+var useScroller = function useScroller(displayId, inputId, classId, defaultValue, array) {
   var _useState = (0, _react.useState)(defaultValue),
       _useState2 = _slicedToArray(_useState, 2),
       changableValue = _useState2[0],
@@ -28322,9 +28322,9 @@ var useScroller = function useScroller(inputId, classId, defaultValue, array) {
   var create = function create() {
     return /*#__PURE__*/_react.default.createElement("div", {
       id: classId
-    }, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("label", {
+    }, /*#__PURE__*/_react.default.createElement("label", {
       htmlFor: inputId
-    }, /*#__PURE__*/_react.default.createElement("select", {
+    }, displayId, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("select", {
       id: inputId,
       onChange: function onChange(event) {
         return changer(event.target.value);
@@ -28337,7 +28337,7 @@ var useScroller = function useScroller(inputId, classId, defaultValue, array) {
         key: keyValue,
         value: "{keyValue}"
       }, keyValue);
-    })))));
+    }))));
   };
 
   return [create];
@@ -28351,7 +28351,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
 
-var _useScroller3 = require("./useScroller");
+var _useScroller5 = require("./useScroller");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -28370,11 +28370,15 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var app = function app() {
-  var _useScroller = (0, _useScroller3.useScroller)("testClass", "testInput", "-", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+  var _useScroller = (0, _useScroller5.useScroller)("Choose one of the options", "testClass", "testInput", "-", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
       _useScroller2 = _slicedToArray(_useScroller, 1),
       Tester = _useScroller2[0];
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null), /*#__PURE__*/_react.default.createElement(Tester, null));
+  var _useScroller3 = (0, _useScroller5.useScroller)("animals", "animalsClass", "animalsInput", "none", []),
+      _useScroller4 = _slicedToArray(_useScroller3, 1),
+      Animals = _useScroller4[0];
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), "FORM", /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(Tester, null), /*#__PURE__*/_react.default.createElement(Animals, null)));
 };
 
 (0, _reactDom.render)(_react.default.createElement(app), document.getElementById("root"));
@@ -28406,7 +28410,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63825" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54989" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

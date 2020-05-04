@@ -1,2 +1,45 @@
+* {
+  font-family: cursive;
+}
+h2 {
+  color: red;
+}
+br {
+  padding: 5px;
+  margin: 5px;
+}
+body {
+  background-image: url("/bg.5fd032fb.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: 1000px;
+}
+label {
+  width: 120px;
+  height: 24px;
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
+}
+select {
+  width: 180px;
+  padding: 0px;
+  margin: 0px;
+}
+form {
+  border-radius: 14px;
+  border: solid black;
+  flex-direction: column;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 100%;
+  background-color: yellow;
+}
+
 
 /*# sourceMappingURL=/ProjectOne.9ad09f98.css.map */
