@@ -30017,7 +30017,59 @@ if (undefined === "mock") {
 }
 
 module.exports.ANIMALS = require("./animals");
-},{"./impl":"node_modules/@frontendmasters/pet/impl.js","./animals":"node_modules/@frontendmasters/pet/animals.js"}],"SearchParams.js":[function(require,module,exports) {
+},{"./impl":"node_modules/@frontendmasters/pet/impl.js","./animals":"node_modules/@frontendmasters/pet/animals.js"}],"useInput.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useInput = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var useInput = function useInput(classId, labelId, value) {
+  var extra = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "0";
+  console.log(extra);
+
+  var _useState = (0, _react.useState)(value),
+      _useState2 = _slicedToArray(_useState, 2),
+      mainValue = _useState2[0],
+      Changer = _useState2[1];
+
+  var caller = function caller() {
+    return /*#__PURE__*/_react.default.createElement("label", {
+      htmlFor: classId,
+      onChange: function onChange(event) {
+        return Changer(event.target.value);
+      }
+    }, labelId, /*#__PURE__*/_react.default.createElement("input", {
+      placeholder: labelId,
+      id: classId,
+      value: mainValue
+    }));
+  };
+
+  return [caller];
+};
+
+exports.useInput = useInput;
+},{"react":"node_modules/react/index.js"}],"SearchParams.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30030,6 +30082,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _useScroller3 = require("./useScroller");
 
 var _pet = require("@frontendmasters/pet");
+
+var _useInput3 = require("./useInput");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -30063,7 +30117,11 @@ var SearchParams = function SearchParams() {
       _useScroller2 = _slicedToArray(_useScroller, 1),
       Animals = _useScroller2[0];
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), defaultValue, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+  var _useInput = (0, _useInput3.useInput)("nInput", "test", "Hooks", 1),
+      _useInput2 = _slicedToArray(_useInput, 1),
+      Inpu = _useInput2[0];
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), defaultValue, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Inpu, null)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "inputId"
   }, "Country", /*#__PURE__*/_react.default.createElement("input", {
     placeholder: "location",
@@ -30076,7 +30134,7 @@ var SearchParams = function SearchParams() {
 };
 
 exports.SearchParams = SearchParams;
-},{"react":"node_modules/react/index.js","./useScroller":"useScroller.js","@frontendmasters/pet":"node_modules/@frontendmasters/pet/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./useScroller":"useScroller.js","@frontendmasters/pet":"node_modules/@frontendmasters/pet/index.js","./useInput":"useInput.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));
@@ -30122,7 +30180,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52341" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52877" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
