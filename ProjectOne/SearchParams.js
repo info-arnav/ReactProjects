@@ -1,26 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { useScroller } from "./useScroller";
+var array = [];
+for (var n = 0; n <= 100; n++) {
+  array[n] = n;
+}
 export var SearchParams = () => {
   var [defaultValue, Changer] = useState("India");
-  var [Tester] = useScroller("Choose", "testClass", "testInput", "-", [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-  ]);
   var [Animals] = useScroller(
     "animals",
     "animalsClass",
     "animalsInput",
     "none",
-    []
+    array
   );
   return (
     <div>
@@ -39,9 +31,6 @@ export var SearchParams = () => {
               }}
             ></input>
           </label>
-        </div>
-        <div>
-          <Tester />
         </div>
         <div>
           <Animals />

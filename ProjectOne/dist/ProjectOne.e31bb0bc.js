@@ -28353,7 +28353,7 @@ exports.SearchParams = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _useScroller5 = require("./useScroller");
+var _useScroller3 = require("./useScroller");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -28371,19 +28371,21 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+var array = [];
+
+for (var n = 0; n <= 100; n++) {
+  array[n] = n;
+}
+
 var SearchParams = function SearchParams() {
   var _useState = (0, _react.useState)("India"),
       _useState2 = _slicedToArray(_useState, 2),
       defaultValue = _useState2[0],
       Changer = _useState2[1];
 
-  var _useScroller = (0, _useScroller5.useScroller)("Choose", "testClass", "testInput", "-", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+  var _useScroller = (0, _useScroller3.useScroller)("animals", "animalsClass", "animalsInput", "none", array),
       _useScroller2 = _slicedToArray(_useScroller, 1),
-      Tester = _useScroller2[0];
-
-  var _useScroller3 = (0, _useScroller5.useScroller)("animals", "animalsClass", "animalsInput", "none", []),
-      _useScroller4 = _slicedToArray(_useScroller3, 1),
-      Animals = _useScroller4[0];
+      Animals = _useScroller2[0];
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), defaultValue, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "inputId"
@@ -28394,7 +28396,7 @@ var SearchParams = function SearchParams() {
     onChange: function onChange(event) {
       Changer(event.target.value);
     }
-  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Tester, null)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Animals, null)), /*#__PURE__*/_react.default.createElement("button", null, "SUBMIT")));
+  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Animals, null)), /*#__PURE__*/_react.default.createElement("button", null, "SUBMIT")));
 };
 
 exports.SearchParams = SearchParams;
@@ -28444,7 +28446,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54989" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50302" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
