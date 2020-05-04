@@ -28320,11 +28320,10 @@ var useScroller = function useScroller(displayId, inputId, classId, defaultValue
       changer = _useState2[1];
 
   var create = function create() {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      id: classId
-    }, /*#__PURE__*/_react.default.createElement("label", {
-      htmlFor: inputId
-    }, displayId, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("select", {
+    return /*#__PURE__*/_react.default.createElement("label", {
+      htmlFor: inputId,
+      value: displayId
+    }, displayId, /*#__PURE__*/_react.default.createElement("select", {
       id: inputId,
       onChange: function onChange(event) {
         return changer(event.target.value);
@@ -28337,19 +28336,22 @@ var useScroller = function useScroller(displayId, inputId, classId, defaultValue
         key: keyValue,
         value: "{keyValue}"
       }, keyValue);
-    }))));
+    })));
   };
 
   return [create];
 };
 
 exports.useScroller = useScroller;
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"SearchParams.js":[function(require,module,exports) {
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SearchParams = void 0;
 
-var _reactDom = require("react-dom");
+var _react = _interopRequireWildcard(require("react"));
 
 var _useScroller5 = require("./useScroller");
 
@@ -28369,8 +28371,13 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var app = function app() {
-  var _useScroller = (0, _useScroller5.useScroller)("Choose one of the options", "testClass", "testInput", "-", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+var SearchParams = function SearchParams() {
+  var _useState = (0, _react.useState)("India"),
+      _useState2 = _slicedToArray(_useState, 2),
+      defaultValue = _useState2[0],
+      Changer = _useState2[1];
+
+  var _useScroller = (0, _useScroller5.useScroller)("Choose", "testClass", "testInput", "-", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
       _useScroller2 = _slicedToArray(_useScroller, 1),
       Tester = _useScroller2[0];
 
@@ -28378,11 +28385,38 @@ var app = function app() {
       _useScroller4 = _slicedToArray(_useScroller3, 1),
       Animals = _useScroller4[0];
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), "FORM", /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(Tester, null), /*#__PURE__*/_react.default.createElement(Animals, null)));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), defaultValue, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "inputId"
+  }, "Country", /*#__PURE__*/_react.default.createElement("input", {
+    placeholder: "location",
+    id: "inputId",
+    value: defaultValue,
+    onChange: function onChange(event) {
+      Changer(event.target.value);
+    }
+  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Tester, null)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Animals, null)), /*#__PURE__*/_react.default.createElement("button", null, "SUBMIT")));
+};
+
+exports.SearchParams = SearchParams;
+},{"react":"node_modules/react/index.js","./useScroller":"useScroller.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _SearchParams = require("./SearchParams");
+
+var _reactDom = require("react-dom");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var app = function app() {
+  return /*#__PURE__*/_react.default.createElement(_SearchParams.SearchParams, null);
 };
 
 (0, _reactDom.render)(_react.default.createElement(app), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./useScroller":"useScroller.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./SearchParams":"SearchParams.js","react-dom":"node_modules/react-dom/index.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
