@@ -15,7 +15,7 @@ export var useScroller = (inputId, classId, defaultValue , array) => {
                             all
                         </option>
                         {
-                            array.map((keyValue) => (<option key = {keyValue} value = {keyValue}>{keyValue}</option>))
+                            array.map((keyValue) => (<option key = {keyValue} value = '{keyValue}'>{keyValue}</option>))
                         }
                     </select>
                 </label>

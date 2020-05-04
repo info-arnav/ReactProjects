@@ -28335,7 +28335,7 @@ var useScroller = function useScroller(inputId, classId, defaultValue, array) {
     }, /*#__PURE__*/_react.default.createElement("option", null, "all"), array.map(function (keyValue) {
       return /*#__PURE__*/_react.default.createElement("option", {
         key: keyValue,
-        value: keyValue
+        value: "{keyValue}"
       }, keyValue);
     })))));
   };
@@ -28406,7 +28406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59385" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63825" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
