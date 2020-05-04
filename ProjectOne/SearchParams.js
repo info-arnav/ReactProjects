@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useScroller } from "./useScroller";
+
 var array = [];
 for (var n = 0; n <= 100; n++) {
   array[n] = n;
