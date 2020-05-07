@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useScroller } from "./useScroller";
-import { ANIMALS } from "@frontendmasters/pet";
+import pets, { ANIMALS } from "@frontendmasters/pet";
 import { useInput } from "./useInput";
 
 var array = [];
