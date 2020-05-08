@@ -30108,7 +30108,7 @@ for (var n = 0; n <= 100; n++) {
 }
 
 var SearchParams = function SearchParams() {
-  var _useState = (0, _react.useState)("Sanfrancisco, WA"),
+  var _useState = (0, _react.useState)("Seattle, WA"),
       _useState2 = _slicedToArray(_useState, 2),
       defaultValue = _useState2[0],
       Changer = _useState2[1];
@@ -30183,7 +30183,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65463" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51468" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

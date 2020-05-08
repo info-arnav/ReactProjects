@@ -10,7 +10,7 @@ for (var n = 0; n <= 100; n++) {
 }
 
 export var SearchParams = () => {
-  var [defaultValue, Changer] = useState("Sanfrancisco, WA");
+  var [defaultValue, Changer] = useState("Seattle, WA");
   var [Animals] = useScroller(
     "animals",
     "animalsClass",
