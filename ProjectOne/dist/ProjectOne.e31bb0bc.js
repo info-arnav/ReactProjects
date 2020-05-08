@@ -30081,7 +30081,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _useScroller3 = require("./useScroller");
 
-var _pet = require("@frontendmasters/pet");
+var _pet = _interopRequireWildcard(require("@frontendmasters/pet"));
 
 var _useInput3 = require("./useInput");
 
@@ -30108,7 +30108,7 @@ for (var n = 0; n <= 100; n++) {
 }
 
 var SearchParams = function SearchParams() {
-  var _useState = (0, _react.useState)("India"),
+  var _useState = (0, _react.useState)("Sanfrancisco, WA"),
       _useState2 = _slicedToArray(_useState, 2),
       defaultValue = _useState2[0],
       Changer = _useState2[1];
@@ -30121,6 +30121,9 @@ var SearchParams = function SearchParams() {
       _useInput2 = _slicedToArray(_useInput, 1),
       Inpu = _useInput2[0];
 
+  (0, _react.useEffect)(function () {
+    _pet.default.breeds("dog").then(console.log, console.error);
+  });
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), defaultValue, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Inpu, null)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "inputId"
   }, "Country", /*#__PURE__*/_react.default.createElement("input", {
@@ -30180,7 +30183,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52877" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65463" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
