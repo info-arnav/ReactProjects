@@ -3,6 +3,7 @@ import { render } from "react-dom";
 
 export var useScroller = (displayId, inputId, classId, defaultValue, array) => {
   var [changableValue, changer] = useState(defaultValue);
+  var random;
   var create = () => {
     return (
       <label htmlFor={inputId} value={displayId}>
@@ -12,7 +13,7 @@ export var useScroller = (displayId, inputId, classId, defaultValue, array) => {
           onChange={(event) => changer(event.target.value)}
           onBlur={(event) => changer(event.target.value)}
         >
-          <option>all</option>
+          <option>{defaultValue}</option>
           {array.map((keyValue) => (
             <option key={keyValue} value="{keyValue}">
               {keyValue}
@@ -22,5 +23,5 @@ export var useScroller = (displayId, inputId, classId, defaultValue, array) => {
       </label>
     );
   };
-  return [create];
+  return [create, changableValue, changer];
 };

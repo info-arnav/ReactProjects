@@ -28319,6 +28319,8 @@ var useScroller = function useScroller(displayId, inputId, classId, defaultValue
       changableValue = _useState2[0],
       changer = _useState2[1];
 
+  var random;
+
   var create = function create() {
     return /*#__PURE__*/_react.default.createElement("label", {
       htmlFor: inputId,
@@ -28331,7 +28333,7 @@ var useScroller = function useScroller(displayId, inputId, classId, defaultValue
       onBlur: function onBlur(event) {
         return changer(event.target.value);
       }
-    }, /*#__PURE__*/_react.default.createElement("option", null, "all"), array.map(function (keyValue) {
+    }, /*#__PURE__*/_react.default.createElement("option", null, defaultValue), array.map(function (keyValue) {
       return /*#__PURE__*/_react.default.createElement("option", {
         key: keyValue,
         value: "{keyValue}"
@@ -28339,7 +28341,7 @@ var useScroller = function useScroller(displayId, inputId, classId, defaultValue
     })));
   };
 
-  return [create];
+  return [create, changableValue, changer];
 };
 
 exports.useScroller = useScroller;
@@ -30102,10 +30104,15 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var array = [];
+var animalsClass = {
+  value: 1
+};
 
 for (var n = 0; n <= 100; n++) {
   array[n] = n;
 }
+
+var abcd = "1";
 
 var SearchParams = function SearchParams() {
   var _useState = (0, _react.useState)("Seattle, WA"),
@@ -30113,17 +30120,41 @@ var SearchParams = function SearchParams() {
       defaultValue = _useState2[0],
       Changer = _useState2[1];
 
-  var _useScroller = (0, _useScroller3.useScroller)("animals", "animalsClass", "animalsInput", "none", _pet.ANIMALS),
-      _useScroller2 = _slicedToArray(_useScroller, 1),
-      Animals = _useScroller2[0];
+  {
+    /* 
+    *var [Animals] = useScroller(
+    "animals",
+    "animalsClass",
+    "animalsInput",
+    "none",
+    ANIMALS
+    );
+    */
+  }
+
+  var _useState3 = (0, _react.useState)("none"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      changableValue = _useState4[0],
+      changer = _useState4[1];
+
+  var breedsArray = [];
+
+  var breedFunction = function breedFunction(array) {
+    for (i = 0; i < array.length; i++) {
+      breedsArray.push(array.i.name);
+    }
+  };
+
+  var _useScroller = (0, _useScroller3.useScroller)("Breeds", "breedClass", "breedInput", "select", breedsArray),
+      _useScroller2 = _slicedToArray(_useScroller, 3),
+      Breeds = _useScroller2[0],
+      breedschanged = _useScroller2[1],
+      breedsChanger = _useScroller2[2];
 
   var _useInput = (0, _useInput3.useInput)("nInput", "test", "Hooks", 1),
       _useInput2 = _slicedToArray(_useInput, 1),
       Inpu = _useInput2[0];
 
-  (0, _react.useEffect)(function () {
-    _pet.default.breeds("dog").then(console.log, console.error);
-  });
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "THIS IS A REACT SITE"), defaultValue, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Inpu, null)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "inputId"
   }, "Country", /*#__PURE__*/_react.default.createElement("input", {
@@ -30133,7 +30164,23 @@ var SearchParams = function SearchParams() {
     onChange: function onChange(event) {
       Changer(event.target.value);
     }
-  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Animals, null)), /*#__PURE__*/_react.default.createElement("button", null, "SUBMIT")));
+  }))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "animalsClass",
+    value: "animals"
+  }, "animals", /*#__PURE__*/_react.default.createElement("select", {
+    id: "animalsClass",
+    onChange: function onChange(event) {
+      return changer(event.target.value);
+    },
+    onBlur: function onBlur(event) {
+      return changer(event.target.value);
+    }
+  }, /*#__PURE__*/_react.default.createElement("option", null, "none"), /*#__PURE__*/_react.default.createElement("option", null, "barnyard"), /*#__PURE__*/_react.default.createElement("option", null, "bird"), /*#__PURE__*/_react.default.createElement("option", null, "cat"), /*#__PURE__*/_react.default.createElement("option", null, "dog"), /*#__PURE__*/_react.default.createElement("option", null, "horse"), /*#__PURE__*/_react.default.createElement("option", null, "rabbit"), /*#__PURE__*/_react.default.createElement("option", null, "small-furry"), /*#__PURE__*/_react.default.createElement("option", null, "scales-fins-other")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Breeds, null)), (0, _react.useEffect)(function () {
+    _pet.default.breeds(changableValue).then(function (a) {
+      breedsArray.push(a.breeds);
+      console.log(breedsArray);
+    }, console.error);
+  }), /*#__PURE__*/_react.default.createElement("button", null, "SUBMIT")));
 };
 
 exports.SearchParams = SearchParams;
@@ -30183,7 +30230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50602" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52726" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
